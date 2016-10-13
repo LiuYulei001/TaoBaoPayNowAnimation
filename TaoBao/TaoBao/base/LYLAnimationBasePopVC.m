@@ -52,7 +52,6 @@
 {
     CGRect frame = _popView.frame;
     frame.origin.y += _popView.frame.size.height;
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
         //maskView隐藏
@@ -71,6 +70,7 @@
             
         } completion:^(BOOL finished) {
             
+            [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
             //移除
             [_popView removeFromSuperview];
         }];
