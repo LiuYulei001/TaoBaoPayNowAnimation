@@ -40,6 +40,9 @@
         UIView * maskView = [[UIView alloc]initWithFrame:self.view.bounds];
         maskView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         maskView.alpha = 0;
+        UITapGestureRecognizer *tap_close = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(close)];
+        maskView.userInteractionEnabled = YES;
+        [maskView addGestureRecognizer:tap_close];
         maskView;
     });
     [_rootview addSubview:_maskView];
